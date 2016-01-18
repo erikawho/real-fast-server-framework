@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 
-var files = ['gulpfile.js', './lib/*.js', './test/test*.js',
+var files = ['index.js', 'gulpfile.js', './lib/*.js', './test/*.spec.js',
  '!node_modules/**', '!*.json'];
 
 gulp.task('lint', () => {
@@ -15,7 +15,7 @@ gulp.task('lint', () => {
 });
 
 gulp.task('mocha', () => {
-  return gulp.src('test/test*.js')
+  return gulp.src('test/*.spec.js')
   .pipe(mocha({ reporter: 'nyan' }));
 });
 
